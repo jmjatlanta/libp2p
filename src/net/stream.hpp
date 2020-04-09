@@ -21,23 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#include <net/dialer.hpp>
+#pragma once
 
 namespace libp2p {
 namespace net {
 
-   /***
-    * @brief Create a new dialer
-    * @param peer this peer
-    * @param peer_store where all peers are stored
-    * @param private_key this peer's private key
-    * @param swarm the swarm
-    */
-Dialer::Dialer(const Peer& peer, const storage::PeerStore& peer_store, 
-         const crypto::PrivateKey<crypto::RSAPrivateKey>& private_key, const Swarm& swarm)
-         : peer(peer), peer_store(peer_store), private_key(private_key), swarm(swarm), fallback_dialer(TCPDialer(peer, private_key))
+class Stream
 {
-}
-
+};
 
 }} // namespace libp2p/net

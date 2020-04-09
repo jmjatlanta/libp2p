@@ -10,6 +10,7 @@ add_library(libp2p STATIC
 
 target_include_directories( libp2p PUBLIC
    ${CMAKE_CURRENT_SOURCE_DIR}
+   ${CMAKE_CURRENT_SOURCE_DIR}/../libraries
 )
 
 install(TARGETS libp2p DESTINATION lib)
@@ -17,5 +18,6 @@ install(FILES crypto/private_key.hpp
    net/dialer.hpp
    net/peer.hpp
    net/swarm.hpp
+   net/tcp_dialer.hpp
    storage/peer_store.hpp
    DESTINATION include)

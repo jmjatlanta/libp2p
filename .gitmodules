@@ -1,0 +1,3 @@
+[submodule "libraries/multiaddr"]
+	path = libraries/multiaddr
+	url = https://github.com/jmjatlanta/multiaddr

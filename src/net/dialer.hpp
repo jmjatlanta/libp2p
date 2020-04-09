@@ -26,6 +26,9 @@
 #include <storage/peer_store.hpp>
 #include <crypto/private_key.hpp>
 #include <net/swarm.hpp>
+#include <net/tcp_dialer.hpp>
+#include <net/stream.hpp>
+#include <multiaddr/multiaddr.hpp>
 
 namespace libp2p {
 namespace net {
@@ -42,6 +45,15 @@ class Dialer
     */
    Dialer(const Peer& peer, const storage::PeerStore& peer_store, 
          const crypto::PrivateKey<crypto::RSAPrivateKey>& private_key, const Swarm& swarm);
+
+   Stream GetConnection(const multiaddr::MultiAddress& address);
+ 
+   private:
+   const Peer& peer;
+   const storage::PeerStore& peer_store;
+   const crypto::PrivateKey<crypto::RSAPrivateKey>& private_key;
+   const Swarm& swarm;
+   const TCPDialer fallback_dialer;
 };
 
 }} // namespace libp2p/net
